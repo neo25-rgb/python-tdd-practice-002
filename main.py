@@ -1,3 +1,4 @@
+from typing import List
 """
 The Fibonacci sequence is a series of numbers where each number 
 is the sum of the two preceding ones, starting from 0 and 1.
@@ -12,8 +13,18 @@ Example:
     return [0, 1, 1]
 """
 def fibonacci(n: int) -> list[int]:
+    if not isinstance(n, int):
+        raise ValueError("n must be int")
+    if n <= 0:
+        return []
+    seq = [0]
+    if n == 1:
+        return seq
+    seq.append(1)
+    while len(seq) < n:
+        seq.append(seq[-1] + seq[-2])
 
-    return []
+    return seq
 
 
 """
