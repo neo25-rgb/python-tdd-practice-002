@@ -35,8 +35,9 @@ Example:
     nums = [1, 3, 2, 27, 50, 17, 8, 4, 98, 22]
     return [2, 4, 8, 22, 50, 98]
 """
-def even(nums: list[int]) -> list[int]: 
-    return []
+def even(nums: list[int]) -> list[int]:
+    ev=[ x for x in list if isinstance(x, int) and x % 2 == 0]
+    return sorted(ev)
 
 
 """
@@ -48,8 +49,8 @@ Example:
     return [27, 17, 3, 1]
 """
 def odd(nums: list[int]) -> list[int]:
-
-    return []
+    od = [x for x in list if isinstance(x, int) and x % 2 != 0]
+    return sorted(od, reverse=True)
 
 
 """
@@ -65,7 +66,13 @@ Example:
     sum(odd) = 4, sum(even) = 2 → returns 'Odd'
 """
 def even_vs_odd(nums: list[int]) -> str:
-    return ""
+    ev_sum = sum(x for x in list if isinstance(x, int) and x % 2 == 0)
+    od_sum = sum(x for x in list if isinstance(x, int) and x % 2 != 0)
+    if ev_sum > od_sum:
+        return "Even"
+    if od_sum > ev_sum:
+        return "Odd"
+    return "Tie"
 
 
 """
