@@ -1,4 +1,5 @@
 from typing import List
+import math
 """
 The Fibonacci sequence is a series of numbers where each number 
 is the sum of the two preceding ones, starting from 0 and 1.
@@ -87,8 +88,24 @@ Example:
     is_prime(10) → False
     is_prime(-3) → raises ValueError
 """
-def is_prime(n):
-    return False
+def is_prime(n)->bool:
+    if not isinstance(n,int):
+        raise ValueError("n must be an integer")
+    if n < 0:
+        raise ValueError("n must be non-negative")
+    if n < 2:
+        return False
+    if n ==2:
+        return True
+    if n % 2==0:
+        return False
+    i = 3
+    limit=int(math.sqrt(n))+1
+    while i <= limit:
+        if n % i == 0:
+            return False
+        i += 2
+    return True
 
 
 """
@@ -104,4 +121,7 @@ Hint:
     - Look at the pattern of the example carefully.
 """
 def generate_email(fullname: str, year: str, campus: str) -> str:
+    while isinstance(fullname,str) :
+        isinstance(year, str) or not isinstance(campus,str)
     return ""
+
