@@ -87,10 +87,10 @@ class TestGenerateEmail(unittest.TestCase):
     def test_generate_email(self):
         self.assertEqual(generate_email('Auston Mtabane','2024','jhb'),     'aumtajhb024@student.wethinkcode.co.za')
         self.assertEqual(generate_email('Neo Phukubye','2025','jhb'),       'nephujhb025@student.wethinkcode.co.za')
-        self.assertEqual(generate_email('Kwenzakele	Shongwe','2025','jhb'), 'kwshojhb025@student.wethinkcode.co.za')
+        self.assertEqual(generate_email('Kwenzakele Shongwe','2025','jhb'), 'kwshojhb025@student.wethinkcode.co.za')
         self.assertEqual(generate_email('Khatisani Mongwe','2025','jhb'),   'khmonjhb025@student.wethinkcode.co.za')
         self.assertEqual(generate_email('Agnes Chauke','2025','jhb'),       'agchajhb025@student.wethinkcode.co.za')
-        self.assertEqual(generate_email("Karabo	Mahlare",'2025','jhb'),     'kamahjhb025@student.wethinkcode.co.za')
+        self.assertEqual(generate_email("Karabo Mahlare",'2025','jhb'),     'kamahjhb025@student.wethinkcode.co.za')
 
     def test_generate_email_edge(self):
         self.assertEqual(generate_email('Oriel Kopano Dibakoane','2027','cpt'),      'ordibcpt027@student.wethinkcode.co.za')

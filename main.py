@@ -37,7 +37,7 @@ Example:
     return [2, 4, 8, 22, 50, 98]
 """
 def even(nums: list[int]) -> list[int]:
-    ev=[ x for x in list if isinstance(x, int) and x % 2 == 0]
+    ev=[ x for x in nums if isinstance(x, int) and x % 2 == 0]
     return sorted(ev)
 
 
@@ -50,7 +50,7 @@ Example:
     return [27, 17, 3, 1]
 """
 def odd(nums: list[int]) -> list[int]:
-    od = [x for x in list if isinstance(x, int) and x % 2 != 0]
+    od = [x for x in nums if isinstance(x, int) and x % 2 != 0]
     return sorted(od, reverse=True)
 
 
@@ -67,8 +67,8 @@ Example:
     sum(odd) = 4, sum(even) = 2 → returns 'Odd'
 """
 def even_vs_odd(nums: list[int]) -> str:
-    ev_sum = sum(x for x in list if isinstance(x, int) and x % 2 == 0)
-    od_sum = sum(x for x in list if isinstance(x, int) and x % 2 != 0)
+    ev_sum = sum(even(nums))
+    od_sum = sum(odd(nums))
     if ev_sum > od_sum:
         return "Even"
     if od_sum > ev_sum:
@@ -121,7 +121,17 @@ Hint:
     - Look at the pattern of the example carefully.
 """
 def generate_email(fullname: str, year: str, campus: str) -> str:
-    while isinstance(fullname,str) :
-        isinstance(year, str) or not isinstance(campus,str)
-    return ""
+    fullname_ = fullname.split(" ")
+    year_=year[1:]
+    name=fullname_[0][:2]
+    name = name.lower()
+    surname=fullname_[-1][:3]
+    surname=surname.lower()
+    email=name + surname + campus + year_ + "@student.wethinkcode.co.za"
+    return email
+
+
+
+
+
 
